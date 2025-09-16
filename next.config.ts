@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: '/Nule',
+  basePath: process.env.NODE_ENV === "development" ?  '' : '/Nule',
   experimental: {
     viewTransition: true,
   },
