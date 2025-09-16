@@ -2,14 +2,13 @@
   "name": "nule",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Haruroko.github.io/Nule",
+  "homepage": "https://haruroko.github.io/Nule",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
+  "dev": "next dev",
+  "build": "next build",
+  "predeploy": "npm run build",
+  "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles"
+},
   "dependencies": {
     "class-names": "^1.0.0",
     "classnames": "^2.5.1",
