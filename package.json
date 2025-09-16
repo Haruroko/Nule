@@ -2,7 +2,7 @@
   "name": "nule",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://<USERNAME>.github.io/<REPO_NAME>",
+  "homepage": "https://Haruroko.github.io/Nule",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
