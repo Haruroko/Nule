@@ -1,6 +1,8 @@
 import SectionList from "./SectionList";
 import { data } from './data';
 import Image from "next/image";
+const basePath = process.env.NODE_ENV === "production" ? "/Nule" : "";
+
 export default function Section2() {
     return(
         <div className="
@@ -17,7 +19,7 @@ export default function Section2() {
                 <div className="w-full max-w-[150px] sm:max-w-[200px] md:max-w-[250px] aspect-square relative mt-6 sm:mt-10 xl:mt-20">
                     <Image
                         fill
-                        src={"/images/profileImage.webp"}
+                        src={`${basePath}/images/profileImage.webp`}
                         alt="프로필 이미지"
                         className="object-cover"
                     />

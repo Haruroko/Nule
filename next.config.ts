@@ -1,8 +1,15 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === "production";
+const basePath = process.env.NODE_ENV === "production" ? "/Nule" : "";
+
 const nextConfig: NextConfig = {
-  output: 'export',
-  basePath: process.env.NODE_ENV === "development" ?  '' : '/Nule',
+  output: "export",
+  basePath: basePath,
+  assetPrefix: isProd ? "/Nule/" : "",
+  publicRuntimeConfig: {
+    basePath: isProd ? "/Nule" : "",
+  },
   experimental: {
     viewTransition: true,
   },
@@ -10,5 +17,6 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
 };
+
 
 export default nextConfig;

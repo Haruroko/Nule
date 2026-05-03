@@ -2,12 +2,14 @@ import classNames from "classnames";
 import Image from "next/image"
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
+const basePath = process.env.NODE_ENV === "production" ? "/Nule" : "";
 
 export interface ImageListType {
     src: string;
     className?: string;
     href?: string;
 }
+
 
 export default function ImageList(props: ImageListType) {
     const [mouseOver, setMouseOver] = useState<boolean>(false);
@@ -26,7 +28,7 @@ export default function ImageList(props: ImageListType) {
         >
             <Image
                 fill
-                src={props.src}
+                src={basePath+props.src}
                 alt="썸네일이미지_2"
                 className={twMerge(classNames("brightness-100", { ["brightness-50"]: mouseOver}))}
             />
