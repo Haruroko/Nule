@@ -19,19 +19,28 @@ interface SectionListProps {
 }
 export const SectionList: React.FC<SectionListProps> = ({data}) => {
     return (
-        <div className="flex flex-col gap-y-5">
-            <p className="font-bold text-2xl">{data.title}</p>
-            <div className="flex gap-x-5">
-                <div className="bg-[#A2CCFF] h-auto w-1" />
-                <div className="flex flex-col gap-y-2">
-                    {data.data.map((data, index) => {
-                        return (
-                            <div className="flex items-center gap-x-5">
-                                <p key={index} className="text-xl">{data.text}</p>
-                                 {data.level !== undefined && <AnimatedProgress value={data.level} />}
-                            </div>
-                        )
-                    })}
+        <div className="flex flex-col gap-y-4 sm:gap-y-5">
+            <p className="font-bold text-lg sm:text-xl xl:text-2xl">
+                {data.title}
+            </p>
+
+            <div className="flex gap-x-4 sm:gap-x-5 items-start">
+                <div className="bg-[#A2CCFF] w-1 min-h-full" />
+
+                <div className="flex flex-col gap-y-3 sm:gap-y-4">
+                    {data.data.map((data, index) => (
+                        <div key={index} className="flex items-center gap-x-3 sm:gap-x-5">
+                            <p className="text-base sm:text-lg xl:text-xl">
+                                {data.text}
+                            </p>
+
+                            {data.level !== undefined && (
+                                <div className="w-10 h-10 sm:w-12 sm:h-12">
+                                    <AnimatedProgress value={data.level} />
+                                </div>
+                            )}
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

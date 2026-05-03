@@ -17,7 +17,7 @@ export const AnimatedText: React.FC<AnimatedTextProps> = ({ text, className, del
   }, [delay]);
 
   return (
-    <p className="flex flex-wrap">
+    <p className="flex flex-wrap whitespace-pre justify-center">
       {text.split("").map((char, i) => (
         <span
           key={i}
